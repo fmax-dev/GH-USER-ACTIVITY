@@ -46,10 +46,9 @@ def format_event(event: dict):
         action = event["payload"].get("action", "")
         if action == "opened":
             return f"Opened a new PR in {repo_name}."
+        if action == "merged":
+            return f"Merged a PR in {repo_name}."
         if action == "closed":
-            pr = event["payload"].get("pull_request", {})
-            if pr.get("merged"):
-                return f"Merged a PR in {repo_name}."
             return f"Closed a PR in {repo_name}."
 
     # WatchEvent
