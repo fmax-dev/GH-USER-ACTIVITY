@@ -39,7 +39,7 @@ def format_event(event: dict):
 
     # PushEvent
     if event_type == "PushEvent":
-        return f"Pushed to {repo_name}"
+        return f"Pushed to {repo_name}."
 
     # PullRequestEvent
     if event_type == "PullRequestEvent":
